@@ -219,6 +219,54 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Flavors section animations
+  // const flavorItems = document.querySelectorAll('.home-flavors .flavor-item');
+  // flavorItems.forEach((item, index) => {
+  //   const copy = item.querySelector('.flavor-copy');
+  //   const image = item.querySelector('.flavor-image');
+
+  //   gsap.set(copy, { opacity: 0, y: 50 });
+  //   gsap.set(image, { opacity: 0, scale: 0.9, rotate: index % 2 === 0 ? 2 : -2, transformOrigin: 'center' });
+
+  //   ScrollTrigger.create({
+  //     trigger: item,
+  //     start: 'top 75%',
+  //     onEnter: () => {
+  //       gsap.to(copy, { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' });
+  //       gsap.to(image, { opacity: 1, scale: 1, rotate: 0, duration: 1, ease: 'power3.out', delay: 0.1 });
+  //     },
+  //   });
+  // });
+
+
+  // --- WhipIn Up just for home-flavors ---
+const whipInUp = (target, delay = 0) => {
+  gsap.fromTo(
+    target,
+    { y: 100, opacity: 0, rotateX: 15, transformOrigin: "center bottom" },
+    { y: 0, opacity: 1, rotateX: 0, duration: 1, ease: "back.out(1.7)", delay }
+  );
+};
+
+const flavorItems = document.querySelectorAll(".home-flavors .flavor-item");
+flavorItems.forEach((item) => {
+  const copy  = item.querySelector(".flavor-copy");
+  const image = item.querySelector(".flavor-image");
+
+  // make sure they start hidden so there’s no flash before trigger
+  gsap.set([copy, image], { opacity: 0, y: 100, rotateX: 15 });
+
+  ScrollTrigger.create({
+    trigger: item,
+    start: "top 75%",
+    once: true,              // only whip once
+    onEnter: () => {
+      whipInUp(copy, 0);     // text first
+      whipInUp(image, 0.15); // image follows
+    },
+  });
+});
+
   const spotlightImages = document.querySelector(".home-spotlight-images");
   const containerHeight = spotlightImages.offsetHeight;
   const viewportHeight = window.innerHeight;

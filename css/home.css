@@ -21,6 +21,7 @@
 }
 
 .hero .hero-content .hero-header h1 {
+  color: #FF3008;
   font-size: 12vw;
 }
 
@@ -123,7 +124,7 @@
   position: relative;
   width: 100vw;
   height: 100svh;
-  background-color: var(--base-300);
+  background-color: var(--base-400);
   color: var(--base-100);
   overflow: hidden;
 }
@@ -174,6 +175,24 @@
   padding: 1.5rem;
 }
 
+/* Background images for home-about cards */
+.home-about .home-about-card.hac-1  {
+  background-color: var(--accent-1);
+}
+.home-about .home-about-card.hac-1 {  background-image: url('/home-images/breakfast.svg');
+  background-size: cover;
+  background-position: center;}
+.home-about .home-about-card.hac-2 { background-image: url('/public/home-images/delivery.svg');
+  background-size: cover;
+  background-position: center;
+  background-color: var(--accent-2);
+} 
+.home-about .home-about-card.hac-3 { background-image: url('/public/home-images/app.svg');
+  background-size: cover;
+  background-position: center;
+  background-color: var(--accent-3); }
+/* .home-about .home-about-card.hac-4 { background-image: url('/gallery-images/gallery-img-4.jpg'); } */
+
 .home-about .home-about-card p.mono {
   color: var(--base-secondary-dark);
 }
@@ -212,6 +231,7 @@
   text-align: center;
   transform: translateY(300%);
   will-change: transform;
+  color: #FF3008;
 }
 
 .home-services .cards {
@@ -327,19 +347,19 @@
 
 /* Card front background images */
 .home-services #card-1 .flip-card-front {
-  background-image: url('/spotlight-images/spotlight-img-1.jpg');
+  background-image: url('/home-images/breakfast.svg');
   background-size: cover;
   background-position: center;
 }
 
 .home-services #card-2 .flip-card-front {
-  background-image: url('/spotlight-images/spotlight-img-2.jpg');
+  background-image: url('/home-images/delivery.svg');
   background-size: cover;
   background-position: center;
 }
 
 .home-services #card-3 .flip-card-front {
-  background-image: url('/spotlight-images/spotlight-img-3.jpg');
+  background-image: url('/home-images/app.svg');
   background-size: cover;
   background-position: center;
 }
@@ -444,7 +464,7 @@
   position: relative;
   width: 100vw;
   height: 100svh;
-  background-color: var(--base-300);
+  background-color: var(--base-400);
   color: var(--base-100);
   overflow: hidden;
 }
@@ -544,6 +564,103 @@
 .home-spotlight-bottom-bar .container {
   display: flex;
   justify-content: space-between;
+}
+
+/* REPLACEMENT: a normal block, not absolute */
+.spotlight-phone {
+  position: relative;        /* <-- in flow */
+  width: 100%;
+  height: 100svh;            /* same feel as the old mask section */
+  display: grid;
+  place-items: center;
+  padding: 2rem 0;
+  /* no z-index, no pointer-events here */
+}
+
+/* Phone sizing + screen rect (tweak to your frame) */
+.phone {
+  --frame-w: min(540px, 44vw);
+  --screen-top: 7.5%;
+  --screen-left: 7.1%;
+  --screen-w: 85.8%;
+  --screen-h: 85%;
+
+  position: relative;
+  width: var(--frame-w);
+  aspect-ratio: 1125/2436;        /* match your frame */
+  filter: drop-shadow(0 20px 50px rgba(0,0,0,.35));
+}
+
+.phone-frame {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: contain;
+  user-select: none; pointer-events: none;
+  z-index: 2;                     /* on top of screen content */
+}
+
+.phone .phone-media {
+  position: absolute;
+  top: var(--screen-top);
+  left: var(--screen-left);
+  width: var(--screen-w);
+  height: var(--screen-h);
+  object-fit: cover;
+  border: 0;
+  border-radius: 6.5%/5.5%;
+  z-index: 1;                     /* under frame */
+}
+
+/* Header centered within this section */
+.spotlight-phone-header {
+  position: absolute;
+  bottom: clamp(3rem, 10vh, 7rem);
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(680px, 90vw);
+  text-align: center;
+  color: var(--base-100);
+}
+
+/* remove the old absolute mask block styles if not used anymore */
+
+/* Flavors section */
+.home-flavors {
+  position: relative;
+  width: 100vw;
+  padding: 8rem 0;
+}
+
+.home-flavors .container {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+.home-flavors .flavor-item {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.home-flavors .flavor-item:nth-child(even) {
+  grid-template-columns: 1fr 1.2fr;
+}
+
+.home-flavors .flavor-copy p.mono { color: var(--base-secondary-dark); }
+.home-flavors .flavor-copy h3 { margin: 1rem 0; }
+.home-flavors .flavor-copy p.md { color: var(--base-secondary-dark); }
+
+.home-flavors .flavor-image {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+}
+
+@media (max-width: 1000px) {
+  .home-flavors { padding: 4rem 0; }
+  .home-flavors .flavor-item { grid-template-columns: 1fr; gap: 2rem; }
 }
 
 .outro {
@@ -821,5 +938,278 @@
   .home-services .flip-card-back {
     transform: none !important;
     position: relative;
+  }
+}
+
+/* put this anywhere in your CSS, e.g., home.css */
+.home-flavors .flavor-item { perspective: 800px; }
+
+
+/* ========== Spotlight Phone (scoped; no conflicts) ========== */
+.home-spotlight .spotlight-phone{
+  position: relative;                 /* in-flow replacement of the image */
+  width: 100%;
+  height: 100%;                       /* fills the .home-spotlight section */
+  display: grid;
+  place-items: center;
+  padding: 2rem 0;
+}
+
+/* Phone shell */
+.home-spotlight .sp-phone{
+  position: relative;
+  width: min(520px, 42vw);
+  aspect-ratio: 1125/2436;            /* iPhone-like */
+  filter: drop-shadow(0 28px 80px rgba(0,0,0,.5));
+}
+
+/* Screen area (inner bezel padding controls visible screen) */
+.home-spotlight .sp-screen{
+  position: absolute; inset: 0;
+  padding: 3.8% 4.6%;                 /* tweak to fit your frame look */
+}
+
+.home-spotlight .sp-media{
+  width: 100%; height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 7.5%/6.5%;
+  background: #111;                   /* fallback if media not loaded */
+  border: 0;
+}
+
+/* CSS frame/chrome — no external PNG required */
+.home-spotlight .sp-frame::before,
+.home-spotlight .sp-frame::after{
+  content:"";
+  position:absolute; inset:0;
+  border-radius: 8.7%/7.5%;
+  pointer-events:none;
+}
+
+.home-spotlight .sp-frame::before{
+  /* outer metal rim */
+  box-shadow:
+    0 0 0 2px rgba(160,180,200,.35) inset,
+    0 0 0 10px rgba(0,0,0,.5) inset;
+}
+
+.home-spotlight .sp-frame::after{
+  /* inner edge highlight */
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,.06) inset,
+    0 0 0 14px rgba(0,0,0,.35) inset;
+}
+
+.home-spotlight .sp-notch{
+  position:absolute; left:50%; top:2.6%;
+  width: 38%; height: 4.1%;
+  transform: translateX(-50%);
+  background: #0e0f12;
+  border-radius: 30px;
+  box-shadow: 0 1px 0 rgba(255,255,255,.06) inset;
+  pointer-events:none;
+}
+
+.home-spotlight .sp-glass{
+  position:absolute; inset:0;
+  border-radius: 8.7%/7.5%;
+  background: linear-gradient(120deg, rgba(255,255,255,.08), transparent 30% 70%, rgba(255,255,255,.06));
+  mix-blend-mode: screen;
+  opacity:.55;
+  pointer-events:none;
+}
+
+/* side buttons (visual) */
+.home-spotlight .sp-btn{
+  position:absolute; right:-6px; width:4px; background:#8893a7; border-radius:2px;
+  filter: brightness(.9);
+}
+.home-spotlight .sp-btn-top{ top:14%; height:42px; }
+.home-spotlight .sp-btn-mid{ top:22%; height:68px; }
+
+/* Caption/header inside the spotlight */
+.home-spotlight .spotlight-phone-header{
+  position: absolute;
+  bottom: clamp(3rem, 10vh, 7rem);
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(680px, 90vw);
+  text-align: center;
+  color: var(--base-100);
+}
+
+/* Responsive — center and scale on smaller screens */
+@media (max-width: 1000px){
+  .home-spotlight .sp-phone{ width: min(420px, 78vw); }
+  .home-spotlight .spotlight-phone-header{ width: 90%; }
+}
+
+/* Reserve space for phone spotlight section */
+.home-spotlight .spotlight-phone{
+  position: relative;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  padding: 2rem 0;
+
+  /* reserve aspect ratio space (3000x1688 ≈ 16:9.38) */
+  aspect-ratio: 3000 / 1688;
+  min-height: 1688px;       /* fallback for older browsers */
+  background: var(--base-300); /* neutral bg if no image/video */
+}
+
+/* ===== Phone to bottom-right, full-height ===== */
+.home-spotlight { --spot-side: clamp(24px, 6vw, 80px); }
+
+.home-spotlight .spotlight-phone{
+  /* stop centering */
+  display: block;
+  padding: 0 var(--spot-side);
+  height: 100%;           /* fills .home-spotlight (which is 100svh) */
+  position: relative;
+}
+
+.home-spotlight .sp-phone{
+  position: absolute;
+  right: var(--spot-side);
+  bottom: clamp(12px, 2.5vh, 40px);
+
+  /* make the device fill the vertical space like the ref */
+  height: min(88svh, 900px);   /* tweak the 900px cap if you want it larger */
+  aspect-ratio: 1125/2436;     /* width will auto from height */
+  width: auto;
+
+  /* keep above background images */
+  z-index: 5;
+}
+
+/* keep the screen sizing inside the frame exactly as before */
+.home-spotlight .sp-screen{ padding: 3.8% 4.6%; }
+
+/* ===== Move your intro header to the left like the screenshot ===== */
+.home-spotlight .spotlight-intro-header{
+  position: absolute;
+  top: 50%;
+  left: var(--spot-side);
+  transform: translateY(-50%);     /* no horizontal centering */
+  width: min(680px, 48vw);
+  text-align: left;
+}
+
+/* Bigger headline to match the composition */
+.home-spotlight .spotlight-intro-header h3{
+  font-size: clamp(2.4rem, 6.5vw, 5.5rem);
+  line-height: 1.05;
+}
+
+/* ===== Responsive: center phone on small screens ===== */
+@media (max-width: 1000px){
+  .home-spotlight .sp-phone{
+    position: relative;
+    right: auto; bottom: auto;
+    margin: 2rem auto 0;
+    height: min(72svh, 640px);
+  }
+  .home-spotlight .spotlight-intro-header{
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+  }
+}
+
+/* ===== Optional: reserve space if the bg/media fails (3000x1688) ===== */
+.home-spotlight .spotlight-phone{
+  aspect-ratio: 3000 / 1688;     /* keeps layout stable even if media not loaded */
+  min-height: 100svh;            /* still treat section as a full-screen panel */
+  background: var(--base-300);   /* neutral fallback behind phone */
+}
+
+/* ===== Left column: exact alignment + CTA + badges (scoped) ===== */
+.home-spotlight { --spot-side: clamp(24px, 6vw, 80px); }
+
+.home-spotlight .spotlight-left{
+  position: absolute;
+  left: var(--spot-side);
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(700px, 48vw);
+  color: var(--base-100);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  z-index: 6;  /* above bg, below phone is fine */
+}
+
+.home-spotlight .spotlight-title{
+  margin: 0;
+  font-size: clamp(2.6rem, 6.8vw, 5.6rem); /* big like the ref */
+  line-height: 1.03;
+  letter-spacing: -0.02em;
+}
+
+.home-spotlight .spotlight-sub{
+  margin: 0;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  color: rgba(255,255,255,.9);
+}
+
+.home-spotlight .spotlight-actions{
+  display: flex;
+  align-items: center;
+  gap: 1rem 1.25rem;
+  flex-wrap: wrap;
+}
+
+/* CTA button */
+.home-spotlight .spotlight-btn{
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  padding: .9rem 1.15rem;
+  border-radius: .9rem;
+  background: #FF3008;                  /* your brand orange */
+  color: #fff; font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(255,48,8,.25);
+}
+.home-spotlight .spotlight-btn:hover{ filter: brightness(1.05); }
+
+/* Store badges */
+.home-spotlight .spotlight-badges{
+  display: inline-flex; align-items: center; gap: .75rem; width: 400px;
+}
+.home-spotlight .badge img{
+  height: 44px; display: block;
+}
+
+/* ===== Phone already bottom-right from previous patch ===== */
+.home-spotlight .sp-phone{
+  position: absolute;
+  right: var(--spot-side);
+  bottom: clamp(12px, 2.5vh, 40px);
+  height: min(88svh, 900px);
+  aspect-ratio: 1125/2436;
+  width: auto;
+  z-index: 5;
+}
+
+/* ===== Responsive: center and stack on small screens ===== */
+@media (max-width: 1000px){
+  .home-spotlight .spotlight-left{
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+  }
+  .home-spotlight .spotlight-actions{
+    justify-content: center;
+  }
+  .home-spotlight .sp-phone{
+    position: relative;
+    right: auto; bottom: auto;
+    margin: 2rem auto 0;
+    height: min(72svh, 640px);
   }
 }

@@ -182,12 +182,12 @@
 .home-about .home-about-card.hac-1 {  background-image: url('/home-images/breakfast.svg');
   background-size: cover;
   background-position: center;}
-.home-about .home-about-card.hac-2 { background-image: url('/public/home-images/delivery.svg');
+.home-about .home-about-card.hac-2 { background-image: url('/home-images/delivery.svg');
   background-size: cover;
   background-position: center;
   background-color: var(--accent-2);
 } 
-.home-about .home-about-card.hac-3 { background-image: url('/public/home-images/app.svg');
+.home-about .home-about-card.hac-3 { background-image: url('/home-images/app.svg');
   background-size: cover;
   background-position: center;
   background-color: var(--accent-3); }

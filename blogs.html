@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blogs | FresMo</title>
+    <link rel="icon" href="/global/Fresmo.png" />
+    <link rel="stylesheet" href="/globals.css" />
+    <link rel="stylesheet" href="/css/transition.css" />
+    <link rel="stylesheet" href="/css/menu.css" />
+    <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="/css/about.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/blogs.css" />
+  </head>
+  <body>
+    <div class="transition">
+      <div class="transition-overlay overlay"></div>
+      <div class="transition-logo">
+        <img src="/global/Fresmo.png" alt="Logo" />
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="blogs-hero">
+      <div class="container">
+        <p class="tagline" id="tagline"></p>
+        <h2 id="heading"></h2>
+        <p id="description"></p>
+        <a id="ctaBtn" class="btn"></a>
+      </div>
+    </section>
+
+    <!-- Blog Posts -->
+    <section class="blogs-list">
+      <div class="container" id="blogPosts"></div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-bottom">
+          <div class="footer-col">
+            <div class="footer-logo">
+              <img src="/app-img/Fresmologo.png" alt="FresMo Logo" />
+            </div>
+          </div>
+          <div class="footer-col">
+            <p class="mono">&copy; 2025 FresMo. All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const demoData = {
+        tagline: "Latest Updates",
+        heading: "Blog Posts",
+        description:
+          "Our curated blog posts offer expert advice, inspiring stories, and actionable tips to help you navigate today's fast-paced world with confidence and creativity.",
+        buttonText: "Explore all posts",
+        buttonUrl: "#",
+        posts: [
+          {
+            id: "post-4",
+            title: "Food Consumption for Techies",
+            summary:
+              "In the bustling tech hubs of India, professionals balance tight deadlines with nutritious meals...",
+            label: "Nutrition for Professionals",
+            author: "Admin",
+            published: "15 Mar 2025",
+            url: "#",
+            image:
+              "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&q=80",
+          },
+          {
+            id: "post-5",
+            title: "Best Foods for Focus for Students",
+            summary:
+              "Optimal nutrition is essential for students balancing academics and extracurriculars...",
+            label: "Student Nutrition",
+            author: "Admin",
+            published: "15 Mar 2025",
+            url: "#",
+            image:
+              "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit",
+          },
+          {
+            id: "post-6",
+            title: "Rise of Health-Conscious Meal Options",
+            summary:
+              "Trivandrum is evolving into a hub for health-conscious food lovers with organic and diet-specific meals...",
+            label: "Healthy Eating Trends",
+            author: "Admin",
+            published: "15 Mar 2025",
+            url: "#",
+            image:
+              "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80",
+          },
+          {
+            id: "post-7",
+            title: "AI Trends in Food Delivery Services",
+            summary:
+              "Explore how AI is revolutionizing food delivery with personalized recommendations...",
+            label: "AI in Food Delivery",
+            author: "Admin",
+            published: "15 Mar 2025",
+            url: "#",
+            image:
+              "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80",
+          },
+          {
+            id: "post-8",
+            title: "Tasty Diet Options for Lazy People",
+            summary:
+              "Discover effortless healthy meal options in Kerala with protein bowls, detox soups...",
+            label: "Easy Healthy Meals",
+            author: "Admin",
+            published: "15 Mar 2025",
+            url: "https://www.shadcnblocks.com/tasty-diet-options-lazy-people",
+            image:
+              "https://images.unsplash.com/photo-1543362906-acfc16c67564?auto=format&fit=crop&q=80",
+          },
+          {
+            id: "post-9",
+            title: "Best Food for Women on Their Menstrual Cycle",
+            summary:
+              "Find out which iron-rich, magnesium-packed, and hydrating foods can ease menstrual discomfort...",
+            label: "Women's Health",
+            author: "Admin",
+            published: "15 Mar 2025",
+            url: "https://www.shadcnblocks.com/best-food-for-women-on-their-menstrual-cycle",
+            image:
+              "https://images.unsplash.com/photo-1505576399279-565b52d4ac71?auto=format&fit=crop&q=80",
+          },
+          {
+            id: "post-10",
+            title:
+              "Best Home-Cooked Food for Women’s Beauty and Body Shape",
+            summary:
+              "Discover how FresMo's home-cooked meals can enhance natural beauty and support ideal body shape...",
+            label: "Beauty & Wellness",
+            author: "Admin",
+            published: "15 Mar 2025",
+            url: "https://www.shadcnblocks.com/best-home-cooked-food-for-womens-beauty",
+            image:
+              "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80",
+          },
+        ],
+      };
+
+      // populate hero
+      document.getElementById("tagline").textContent = demoData.tagline;
+      document.getElementById("heading").textContent = demoData.heading;
+      document.getElementById("description").textContent = demoData.description;
+      const ctaBtn = document.getElementById("ctaBtn");
+      ctaBtn.textContent = demoData.buttonText;
+      ctaBtn.href = demoData.buttonUrl;
+
+      // populate posts
+      const blogPostsContainer = document.getElementById("blogPosts");
+      demoData.posts.forEach((post) => {
+        const postCard = document.createElement("div");
+        postCard.className = "blog-card";
+        postCard.innerHTML = `
+          <img src="${post.image}" alt="${post.title}" class="blog-card-img" />
+          <div class="blog-card-content">
+            <span class="label">${post.label}</span>
+            <h3>${post.title}</h3>
+            <p>${post.summary}</p>
+            <p class="meta">By ${post.author} • ${post.published}</p>
+            <a href="${post.url}" target="_blank" class="btn">Read More</a>
+          </div>
+        `;
+        blogPostsContainer.appendChild(postCard);
+      });
+    </script>
+  </body>
+</html>

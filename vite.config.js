@@ -12,6 +12,7 @@ export default defineConfig({
         contact: resolve(__dirname, "contact.html"),
         privacypolicy: resolve(__dirname, "privacypolicy.html"),
         blog: resolve(__dirname, "blogs.html"),
+        accountDeletion: resolve(__dirname, "accountDeletion.html"),
       },
     },
     assetsInclude: [

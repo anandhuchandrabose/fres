@@ -354,3 +354,293 @@
     width: 90%;
   }
 }
+
+
+.about-story {
+  width: 100vw;
+  padding: clamp(4.5rem, 9vw, 7rem) 0;
+  background: var(--base-100);
+}
+
+.about-story .container {
+  max-width: 1080px;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.5rem, 6vw, 3.5rem);
+}
+
+.story-lead h3,
+.story-mission h3,
+.story-impact h3 {
+  font-size: clamp(2.4rem, 4vw, 3rem);
+  line-height: 1.1;
+  color: var(--base-300);
+}
+
+.story-copy {
+  margin-top: 1.75rem;
+  display: grid;
+  gap: 1.25rem;
+  font-size: 1.05rem;
+  color: var(--base-secondary-dark);
+  line-height: 1.75;
+}
+
+.story-highlight {
+  font-weight: 600;
+  color: var(--base-300);
+}
+
+.about-story-mission {
+  background: linear-gradient(180deg, rgba(255, 48, 8, 0.08), rgba(255, 48, 8, 0.02));
+}
+
+.story-mission {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.story-badge {
+  font-family: "DM Mono";
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #ff3008;
+  background: rgba(255, 48, 8, 0.12);
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.story-pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.pillar {
+  background: var(--base-100);
+  border-radius: 20px;
+  padding: 1.75rem;
+  box-shadow: 0 18px 45px rgba(10, 10, 10, 0.08);
+  border: 1px solid rgba(10, 10, 10, 0.04);
+}
+
+.pillar h4 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.75rem;
+  color: #ff3008;
+}
+
+.pillar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.pillar ul li {
+  font-family: "DM Mono";
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--base-300);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.pillar ul li::before {
+  content: "✓";
+  font-size: 0.85rem;
+  color: #ff3008;
+}
+
+.about-story-impact {
+  background: var(--base-100);
+}
+
+.story-impact {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  color: var(--base-secondary-dark);
+  line-height: 1.75;
+}
+
+.story-impact strong {
+  color: #ff3008;
+}
+
+.story-contact {
+  margin-top: 1rem;
+  padding: 1.75rem;
+  border-radius: 18px;
+  background: rgba(255, 48, 8, 0.06);
+  border: 1px solid rgba(255, 48, 8, 0.15);
+}
+
+.story-contact h4 {
+  font-family: "DM Mono";
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  color: var(--base-300);
+}
+
+.story-contact address {
+  font-style: normal;
+  line-height: 1.6;
+}
+
+.story-contact a {
+  color: #ff3008;
+  text-decoration: none;
+}
+
+.story-contact a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .story-pillars {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-story .container {
+    gap: 2rem;
+  }
+
+  .story-contact {
+    padding: 1.5rem;
+  }
+}
+
+.about-manifesto {
+  width: 100vw;
+  padding: 6rem 0;
+  background: linear-gradient(120deg, rgba(255, 48, 8, 0.08), rgba(255, 255, 255, 0.95));
+}
+
+.about-manifesto .container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.5rem;
+  align-items: stretch;
+}
+
+.manifesto-panel {
+  border-radius: 24px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 20px 50px rgba(10, 10, 10, 0.08);
+}
+
+.manifesto-panel-left {
+  background: #ff3008;
+  color: var(--base-100);
+  gap: 1.25rem;
+}
+
+.manifesto-kicker {
+  font-family: "DM Mono";
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+}
+
+.manifesto-panel-left h3 {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  line-height: 1.1;
+}
+
+.manifesto-meta {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.manifesto-panel-center {
+  background: var(--base-100);
+  text-align: center;
+  gap: 1.25rem;
+}
+
+.manifesto-panel-center img {
+  width: clamp(200px, 25vw, 320px);
+  margin: 0 auto;
+}
+
+.manifesto-tagline {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--base-secondary-dark);
+}
+
+.manifesto-link {
+  color: #ff3008;
+  font-weight: 600;
+}
+
+.manifesto-panel-right {
+  background: #ff3008;
+  color: var(--base-100);
+  gap: 1.5rem;
+}
+
+.manifesto-panel-right blockquote {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.manifesto-panel-right blockquote span {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.manifesto-statement {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.manifesto-association {
+  font-family: "DM Mono";
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.manifesto-association span {
+  background: var(--base-100);
+  color: #ff3008;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+@media (max-width: 1100px) {
+  .manifesto-panel {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .about-story {
+    padding: 4rem 0;
+  }
+
+  .about-manifesto {
+    padding: 4rem 0;
+  }
+}
+

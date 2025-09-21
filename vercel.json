@@ -2,12 +2,37 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "rewrites": [
-    { "source": "/about", "destination": "/about.html" },
-    { "source": "/work", "destination": "/work.html" },
-    { "source": "/project", "destination": "/project.html" },
-    { "source": "/contact", "destination": "/contact.html" },
-    { "source": "/privacypolicy", "destination": "/privacypolicy.html" },
-    { "source": "/blogs", "destination": "/blogs.html" },
-    { "source": "/accountDeletion", "destination": "/accountDeletion.html" }
+    {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/work",
+      "destination": "/work.html"
+    },
+    {
+      "source": "/project",
+      "destination": "/project.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/privacypolicy",
+      "destination": "/privacypolicy.html"
+    },
+    {
+      "source": "/privacypolicy-vendor",
+      "destination": "/privacypolicy-vendor.html"
+    },
+    {
+      "source": "/blogs",
+      "destination": "/blogs.html"
+    },
+    {
+      "source": "/accountDeletion",
+      "destination": "/accountDeletion.html"
+    }
   ]
 }

@@ -33,6 +33,10 @@
     {
       "source": "/accountDeletion",
       "destination": "/accountDeletion.html"
+    },
+    {
+      "source": "/sustainability",
+      "destination": "/sustainability.html"
     }
   ]
 }

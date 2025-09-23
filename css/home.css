@@ -213,8 +213,15 @@
 }
 
 .home-how-header h3 {
-  max-width: min(760px, 90vw);
+  /* max-width: min(760px, 90vw); */
+  font-size: clamp(2.4rem, 4.5vw, 5rem);
+  line-height: 1.1;
   margin: 0 auto;
+}
+
+.home-how-header h4{
+  
+  margin-bottom: 30px;
 }
 
 .home-how-grid {
@@ -245,14 +252,14 @@
 .home-how-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit:scale-down;
 }
 
-.home-how-card h4 {
+/* .home-how-card h4 {
   text-transform: none;
   font-size: 1.35rem;
   color: var(--base-300);
-}
+} */
 
 .home-how-card p.md {
   color: var(--base-secondary-dark);
@@ -553,6 +560,17 @@
   transform: translate(-50%, -50%);
   text-align: center;
   width: 50%;
+}
+
+.home-spotlight .spotlight-intro-header h4 {
+  font-size: clamp(2.4rem, 4.5vw, 6.5rem);
+  line-height: 1.25;
+  color: #fdf6ec ;
+}
+
+.home-spotlight .spotlight-intro-header-small {
+  /* background-color: #ff4b4b; */
+  margin-bottom: 25px;
 }
 
 .home-spotlight .home-spotlight-images {

@@ -3,6 +3,9 @@
   width: 100vw;
   height: 100svh;
   overflow: hidden;
+  background-image: url('/app-img/hero.png');
+  background-size: cover;
+  background-position: center;
 }
 
 .hero .hero-content {
@@ -11,18 +14,20 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  
+  
 }
 
 .hero .hero-content .hero-header {
-  width: 90%;
-  margin: 0 auto;
-  text-align: center;
-  padding-top: 15svh;
+  width: 50%;
+  /* margin: 0 auto; */
+  text-align: start;
+  padding-top: 35svh;
 }
 
 .hero .hero-content .hero-header h1 {
-  color: #FF3008;
-  font-size: 12vw;
+  color: #f9f9f9;
+  font-size: 6vw;
 }
 
 .hero .hero-content .hero-footer {
@@ -34,11 +39,13 @@
 
 .hero .hero-content .hero-footer-copy {
   width: 35%;
+  color: #fdf6ec;
 }
 
 .hero .hero-content .hero-footer-tags {
   display: flex;
   gap: 2rem;
+  color: #fdf6ec;
 }
 
 .hero .hero-cards {

@@ -1,0 +1,161 @@
+.careers-hero {
+  padding: 8rem 0 4rem;
+  background: var(--base-100);
+  color: var(--base-300);
+}
+
+.careers-hero .container {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.careers-hero-copy {
+  flex: 1 1 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.careers-hero-copy h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  line-height: 1.1;
+}
+
+.careers-hero-copy p.md {
+  max-width: 36rem;
+  color: var(--base-secondary-fade);
+}
+
+.careers-hero-visual {
+  flex: 1 1 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.careers-lottie {
+  width: min(420px, 100%);
+  height: min(420px, 70vw);
+}
+
+.careers-overview {
+  padding: 4rem 0;
+  background: var(--base-100);
+}
+
+.careers-overview .container {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.overview-card {
+  padding: 2.5rem;
+  border: 1px dashed var(--base-secondary-fade);
+  border-radius: 20px;
+  background: var(--base-200);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.overview-card h2,
+.overview-card h3 {
+  font-size: 1.75rem;
+  line-height: 1.2;
+}
+
+.overview-card .cta-link {
+  font-family: "Host Grotesk", sans-serif;
+  font-weight: 700;
+  color: var(--accent-1);
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.careers-culture {
+  padding: 6rem 0;
+  background: var(--base-400);
+  color: var(--base-100);
+}
+
+.careers-culture .container {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  align-items: start;
+}
+
+.culture-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.culture-copy span.mono {
+  color: var(--accent-1);
+}
+
+.culture-copy h2 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+}
+
+.culture-list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.culture-item {
+  padding: 2rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.culture-item h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.careers-cta {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, rgba(255, 48, 8, 0.12), rgba(0, 0, 0, 0));
+}
+
+.careers-cta .container {
+  max-width: 720px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.careers-cta h2 {
+  font-size: clamp(2.2rem, 4vw, 2.8rem);
+}
+
+.careers-cta .btn {
+  align-self: center;
+  padding: 0.85rem 2.25rem;
+  border-radius: 999px;
+  background: #ff3008;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .careers-hero {
+    padding-top: 6rem;
+  }
+
+  .overview-card {
+    padding: 2rem;
+  }
+
+  .culture-item {
+    padding: 1.75rem;
+  }
+}

@@ -1,8 +1,9 @@
 .blogs-hero {
   padding: 6rem 0 2rem;
   text-align: center;
-  background: var(--base-300);
-  color: var(--base-100);
+  background: var(--base-200);
+  color: var(--base-300);
+
 }
 
 .blogs-hero .tagline {

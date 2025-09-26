@@ -20,6 +20,8 @@
         <img src="/global/Fresmo.png" alt="Logo" />
       </div>
     </div>
+    <div class="mask-transition"></div>
+    <div class="mask-bg-overlay"></div>
 
     <!-- Hero Section -->
     <section class="blogs-hero">
@@ -27,17 +29,31 @@
         <p class="tagline" id="tagline"></p>
         <h2 id="heading"></h2>
         <p id="description"></p>
-        <a id="ctaBtn" class="btn"></a>
+        <a id="ctaBtn" class="btn" rel="noopener"></a>
       </div>
     </section>
 
     <!-- Blog Posts -->
     <section class="blogs-list">
-      <div class="container" id="blogPosts"></div>
+      <div class="container" id="blogPosts" aria-live="polite"></div>
     </section>
 
     <footer>
       <div class="container">
+        <div class="footer-top">
+          <div class="footer-col">
+            <p class="mono"><span>&#9654;</span> Drop your email if you vibe</p>
+            <div class="footer-email-container">
+              <div class="footer-email-row">
+                <input type="text" placeholder="your@email.com" />
+                <button>
+                  <img src="/global/footer-right-arrow.png" alt="" />
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="footer-col"></div>
+        </div>
         <div class="footer-bottom">
           <div class="footer-col">
             <div class="footer-logo">
@@ -45,12 +61,48 @@
             </div>
           </div>
           <div class="footer-col">
-            <p class="mono">&copy; 2025 FresMo. All Rights Reserved.</p>
+            <div class="footer-sub-col">
+              <p class="mono">Explore</p>
+              <div class="footer-links">
+                <p><a href="/">Fresmo</a></p>
+                <p><a href="/about">About</a></p>
+                <p><a href="/blogs">Blogs</a></p>
+                <p><a href="/careers">Careers</a></p>
+                <p><a href="/privacypolicy">Privacy Policy</a></p>
+                <p><a href="/privacypolicy-vendor">Vendor Privacy Policy</a></p>
+                <p><a href="/sustainability">Sustainability &amp; Community Impact</a></p>
+              </div>
+            </div>
+            <div class="footer-sub-col">
+              <p class="mono">Follow us</p>
+              <div class="footer-copy">
+                <p>Sustainability and community impact</p>
+                <br />
+                <p>LinkedIn</p>
+                <p>Twitter</p>
+                <p>Instagram</p>
+                <p>Facebook</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="footer-col">
+            <p class="mono">Made with ❤️ in Kerala</p>
+          </div>
+          <div class="footer-col">
+            <div class="footer-sub-col"></div>
+            <div class="footer-sub-col">
+              <p class="mono">&copy; 2025 All Rights Reserved</p>
+            </div>
           </div>
         </div>
       </div>
     </footer>
 
+    <script type="module" src="/script/lenis-scroll.js"></script>
+    <script type="module" src="/script/transition.js"></script>
+    <script type="module" src="/script/menu.js"></script>
     <script>
       const demoData = {
         tagline: "Latest Updates",
@@ -64,7 +116,7 @@
             id: "post-4",
             title: "Food Consumption for Techies",
             summary:
-              "In the bustling tech hubs of India, professionals balance tight deadlines with nutritious meals...",
+              "In the bustling tech hubs of India, professionals balance tight deadlines with nutritious meals. Discover how omega-3 rich foods, nutritious snacks, homely food delivery, and traditional Kerala breakfasts can boost productivity.",
             label: "Nutrition for Professionals",
             author: "Admin",
             published: "15 Mar 2025",
@@ -76,7 +128,7 @@
             id: "post-5",
             title: "Best Foods for Focus for Students",
             summary:
-              "Optimal nutrition is essential for students balancing academics and extracurriculars...",
+              "Optimal nutrition is essential for students balancing academics and extracurriculars. Learn how whole grains, berries, dark chocolate, and healthy meal delivery can enhance focus and academic performance.",
             label: "Student Nutrition",
             author: "Admin",
             published: "15 Mar 2025",
@@ -88,19 +140,20 @@
             id: "post-6",
             title: "Rise of Health-Conscious Meal Options",
             summary:
-              "Trivandrum is evolving into a hub for health-conscious food lovers with organic and diet-specific meals...",
+              "Trivandrum is evolving into a hub for health-conscious food lovers with organic and diet-specific meals, innovative dishes, and apps like FresMo for tailored nutritious options.",
             label: "Healthy Eating Trends",
             author: "Admin",
             published: "15 Mar 2025",
-            url: "#",
+            url: "",
             image:
               "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&q=80",
           },
           {
             id: "post-7",
-            title: "AI Trends in Food Delivery Services",
+            title:
+              "AI Trends in Food Delivery Services: How Technology is Transforming the Industry",
             summary:
-              "Explore how AI is revolutionizing food delivery with personalized recommendations...",
+              "Explore how AI is revolutionizing food delivery with personalized recommendations, smart order management, predictive analytics, optimized route planning, and innovative payment solutions.",
             label: "AI in Food Delivery",
             author: "Admin",
             published: "15 Mar 2025",
@@ -110,13 +163,14 @@
           },
           {
             id: "post-8",
-            title: "Tasty Diet Options for Lazy People",
+            title:
+              "Tasty Diet Options for Lazy People: Healthy Eating Made Easy",
             summary:
-              "Discover effortless healthy meal options in Kerala with protein bowls, detox soups...",
+              "Discover effortless healthy meal options in Kerala with protein bowls, low-carb delights, detox soups, and balanced meal boxes from FresMo for a tasty, diet-friendly experience.",
             label: "Easy Healthy Meals",
             author: "Admin",
             published: "15 Mar 2025",
-            url: "https://www.shadcnblocks.com/tasty-diet-options-lazy-people",
+            // url: "https://www.shadcnblocks.com/tasty-diet-options-lazy-people",
             image:
               "https://images.unsplash.com/photo-1543362906-acfc16c67564?auto=format&fit=crop&q=80",
           },
@@ -124,24 +178,23 @@
             id: "post-9",
             title: "Best Food for Women on Their Menstrual Cycle",
             summary:
-              "Find out which iron-rich, magnesium-packed, and hydrating foods can ease menstrual discomfort...",
+              "Find out which iron-rich, magnesium-packed, and hydrating foods can ease menstrual discomfort and support health, with FresMo's period-friendly meal options.",
             label: "Women's Health",
             author: "Admin",
             published: "15 Mar 2025",
-            url: "https://www.shadcnblocks.com/best-food-for-women-on-their-menstrual-cycle",
+            // url: "https://www.shadcnblocks.com/best-food-for-women-on-their-menstrual-cycle",
             image:
               "https://images.unsplash.com/photo-1505576399279-565b52d4ac71?auto=format&fit=crop&q=80",
           },
           {
             id: "post-10",
-            title:
-              "Best Home-Cooked Food for Women’s Beauty and Body Shape",
+            title: "Best Home-Cooked Food for Women's Beauty and Body Shape",
             summary:
-              "Discover how FresMo's home-cooked meals can enhance natural beauty and support ideal body shape...",
+              "Discover how FresMo's home-cooked meals can enhance natural beauty and support ideal body shape. Packed with nutrient-rich, chemical-free ingredients, these dishes promote glowing skin, lean muscles, and overall well-being.",
             label: "Beauty & Wellness",
             author: "Admin",
             published: "15 Mar 2025",
-            url: "https://www.shadcnblocks.com/best-home-cooked-food-for-womens-beauty",
+            // url: "https://www.shadcnblocks.com/best-home-cooked-food-for-womens-beauty",
             image:
               "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80",
           },
@@ -159,16 +212,21 @@
       // populate posts
       const blogPostsContainer = document.getElementById("blogPosts");
       demoData.posts.forEach((post) => {
-        const postCard = document.createElement("div");
+        const postCard = document.createElement("article");
         postCard.className = "blog-card";
+
+        const readMoreCta = post.url
+          ? `<a href="${post.url}" target="_blank" rel="noopener" class="btn">Read More</a>`
+          : "";
+
         postCard.innerHTML = `
-          <img src="${post.image}" alt="${post.title}" class="blog-card-img" />
+          <img src="${post.image}" alt="${post.title}" class="blog-card-img" loading="lazy" />
           <div class="blog-card-content">
             <span class="label">${post.label}</span>
             <h3>${post.title}</h3>
             <p>${post.summary}</p>
             <p class="meta">By ${post.author} • ${post.published}</p>
-            <a href="${post.url}" target="_blank" class="btn">Read More</a>
+            ${readMoreCta}
           </div>
         `;
         blogPostsContainer.appendChild(postCard);

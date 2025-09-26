@@ -31,6 +31,10 @@
       "destination": "/blogs.html"
     },
     {
+      "source": "/careers",
+      "destination": "/careers.html"
+    },
+    {
       "source": "/accountDeletion",
       "destination": "/accountDeletion.html"
     },

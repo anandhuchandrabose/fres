@@ -25,7 +25,8 @@
 
 .careers-hero-copy p.md {
   max-width: 36rem;
-  color: var(--base-secondary-fade);
+  /* color: var(--base-secondary-fade); */
+  color: var(--base-300);
 }
 
 .careers-hero-visual {
@@ -70,7 +71,7 @@
 .overview-card .cta-link {
   font-family: "Host Grotesk", sans-serif;
   font-weight: 700;
-  color: var(--accent-1);
+  color: #FF3008;
   text-decoration: none;
   word-break: break-word;
 }
@@ -101,6 +102,9 @@
 .culture-copy h2 {
   font-size: clamp(2rem, 4vw, 2.75rem);
 }
+/* .culture-copy p.md {
+  max-width: 28rem;
+} */
 
 .culture-list {
   display: grid;

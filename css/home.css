@@ -3,9 +3,21 @@
   width: 100vw;
   height: 100svh;
   overflow: hidden;
-  background-image: url('/app-img/hero.png');
-  background-size: cover;
-  background-position: center;
+  background-color: #040404;
+}
+
+.hero .hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero .hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .hero::before {

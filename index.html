@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/css/menu.css" />
     <link rel="stylesheet" href="/css/home.css" />
     <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="preload" as="image" href="/app-img/hero.png" fetchpriority="high" />
   </head>
   <body>
     <div class="transition">
@@ -52,6 +53,9 @@
     </nav> -->
 
     <section class="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <img src="/app-img/hero.png" alt="" loading="eager" fetchpriority="high" decoding="async" />
+      </div>
       <div class="home-services-top-bar">
         <div class="container">
           <div class="symbols-container">

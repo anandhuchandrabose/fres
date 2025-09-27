@@ -22,6 +22,30 @@
     <div class="mask-transition"></div>
     <div class="mask-bg-overlay"></div>
 
+<header class="navbar">
+  <div class="nav-container">
+    <!-- Logo -->
+    <div class="nav-logo">
+      <a href="/">
+        <img src="/app-img/Fresmologo.png" alt="Fresmo Logo" />
+      </a>
+    </div>
+
+    <!-- Hamburger -->
+    <div class="nav-toggle" id="nav-toggle">
+      ☰
+    </div>
+
+    <!-- Links -->
+    <nav class="nav-links" id="nav-links">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/blogs">Blogs</a>
+      <a href="/careers">Careers</a>
+      <a href="/sustainability">Sustainability</a>
+    </nav>
+  </div>
+</header>
 
 
 <section class="about-hero">
@@ -40,7 +64,7 @@
 
 
 
- <section class="about-manifesto">
+   <section class="about-manifesto">
       <div class="container">
         <div class="manifesto-panel manifesto-panel-left" data-animate-type="fade-up" data-animate-delay="0.1">
           <p class="manifesto-kicker">We believe in</p>
@@ -328,6 +352,24 @@
 
   changeText();
 </script>
+<script>
+  const toggle = document.getElementById("nav-toggle");
+  const links = document.getElementById("nav-links");
+
+  toggle.addEventListener("click", () => {
+    links.classList.toggle("active");
+  });
+
+  // Close menu when a link is clicked
+  document.querySelectorAll("#nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      links.classList.remove("active");
+    });
+  });
+</script>
+
+
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
     <script type="module" src="/script/lenis-scroll.js"></script>

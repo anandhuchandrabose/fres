@@ -696,14 +696,14 @@
 /* Phone sizing + screen rect (tweak to your frame) */
 .phone {
   --frame-w: min(540px, 44vw);
-  --screen-top: 7.5%;
-  --screen-left: 7.1%;
-  --screen-w: 85.8%;
-  --screen-h: 85%;
+  --screen-top: 2.8%;
+  --screen-left: 5.2%;
+  --screen-w: 89.6%;
+  --screen-h: 94.5%;
 
   position: relative;
   width: var(--frame-w);
-  aspect-ratio: 1125/2436;        /* match your frame */
+  aspect-ratio: 390/844;          /* match your frame */
   filter: drop-shadow(0 20px 50px rgba(0,0,0,.35));
 }
 
@@ -1074,77 +1074,55 @@
 }
 
 /* Phone shell */
-.home-spotlight .sp-phone{
+/* .home-spotlight .sp-phone{
   position: relative;
   width: min(520px, 42vw);
-  aspect-ratio: 1125/2436;            /* iPhone-like */
+  aspect-ratio: 390/844;
   filter: drop-shadow(0 28px 80px rgba(0,0,0,.5));
-}
+} */
 
-/* Screen area (inner bezel padding controls visible screen) */
+
 .home-spotlight .sp-screen{
-  position: absolute; inset: 0;
-  padding: 3.8% 4.6%;                 /* tweak to fit your frame look */
+  position: absolute;
+  inset: 2.8% 5.2%;
+  border-radius: 8.5% / 9.5%;
+  overflow: hidden;
+  background: #05070c;
+  z-index: 1;
 }
 
 .home-spotlight .sp-media{
   width: 100%; height: 100%;
   display: block;
   object-fit: cover;
-  border-radius: 7.5%/6.5%;
+  border-radius: inherit;
   background: #111;                   /* fallback if media not loaded */
   border: 0;
 }
 
-/* CSS frame/chrome — no external PNG required */
-.home-spotlight .sp-frame::before,
-.home-spotlight .sp-frame::after{
-  content:"";
-  position:absolute; inset:0;
-  border-radius: 8.7%/7.5%;
-  pointer-events:none;
+.home-spotlight .sp-frame-img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 3;
+  pointer-events: none;
 }
 
-.home-spotlight .sp-frame::before{
-  /* outer metal rim */
-  box-shadow:
-    0 0 0 2px rgba(160,180,200,.35) inset,
-    0 0 0 10px rgba(0,0,0,.5) inset;
-}
-
-.home-spotlight .sp-frame::after{
-  /* inner edge highlight */
-  box-shadow:
-    0 0 0 1px rgba(255,255,255,.06) inset,
-    0 0 0 14px rgba(0,0,0,.35) inset;
-}
-
-.home-spotlight .sp-notch{
-  position:absolute; left:50%; top:2.6%;
-  width: 38%; height: 4.1%;
+.home-spotlight .sp-island{
+  position: absolute;
+  top: 4.3%;
+  left: 50%;
   transform: translateX(-50%);
-  background: #0e0f12;
-  border-radius: 30px;
-  box-shadow: 0 1px 0 rgba(255,255,255,.06) inset;
-  pointer-events:none;
+  width: 25.5%;
+  height: 4.7%;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(6,8,15,0.92), rgba(4,5,9,0.98));
+  box-shadow: 0 1px 3px rgba(15,23,42,0.35);
+  z-index: 4;
+  pointer-events: none;
 }
-
-.home-spotlight .sp-glass{
-  position:absolute; inset:0;
-  border-radius: 8.7%/7.5%;
-  background: linear-gradient(120deg, rgba(255,255,255,.08), transparent 30% 70%, rgba(255,255,255,.06));
-  mix-blend-mode: screen;
-  opacity:.55;
-  pointer-events:none;
-}
-
-/* side buttons (visual) */
-.home-spotlight .sp-btn{
-  position:absolute; right:-6px; width:4px; background:#8893a7; border-radius:2px;
-  filter: brightness(.9);
-}
-.home-spotlight .sp-btn-top{ top:14%; height:42px; }
-.home-spotlight .sp-btn-mid{ top:22%; height:68px; }
 
 /* Caption/header inside the spotlight */
 .home-spotlight .spotlight-phone-header{
@@ -1195,15 +1173,12 @@
 
   /* make the device fill the vertical space like the ref */
   height: min(88svh, 900px);   /* tweak the 900px cap if you want it larger */
-  aspect-ratio: 1125/2436;     /* width will auto from height */
+  aspect-ratio: 9/18;          /* width will auto from height */
   width: auto;
 
   /* keep above background images */
   z-index: 5;
 }
-
-/* keep the screen sizing inside the frame exactly as before */
-.home-spotlight .sp-screen{ padding: 3.8% 4.6%; }
 
 /* ===== Move your intro header to the left like the screenshot ===== */
 .home-spotlight .spotlight-intro-header{
@@ -1303,15 +1278,15 @@
 }
 
 /* ===== Phone already bottom-right from previous patch ===== */
-.home-spotlight .sp-phone{
+/* .home-spotlight .sp-phone{
   position: absolute;
   right: var(--spot-side);
   bottom: clamp(12px, 2.5vh, 40px);
   height: min(88svh, 900px);
-  aspect-ratio: 1125/2436;
+  aspect-ratio: 390/844;
   width: auto;
   z-index: 5;
-}
+} */
 
 /* ===== Responsive: center and stack on small screens ===== */
 @media (max-width: 1000px){

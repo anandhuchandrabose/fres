@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/css/transition.css" />
     <link rel="stylesheet" href="/css/menu.css" />
     <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="/css/navbar.css" />
     <link rel="stylesheet" href="/css/about.css" />
     <link rel="stylesheet" href="/css/footer.css" />
   </head>
@@ -352,25 +353,7 @@
 
   changeText();
 </script>
-<script>
-  const toggle = document.getElementById("nav-toggle");
-  const links = document.getElementById("nav-links");
-
-  toggle.addEventListener("click", () => {
-    links.classList.toggle("active");
-  });
-
-  // Close menu when a link is clicked
-  document.querySelectorAll("#nav-links a").forEach(link => {
-    link.addEventListener("click", () => {
-      links.classList.remove("active");
-    });
-  });
-</script>
-
-
-
-
+<script src="/script/navbar.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
     <script type="module" src="/script/lenis-scroll.js"></script>
     <script type="module" src="/script/transition.js"></script>

@@ -13,6 +13,8 @@ export default defineConfig({
         privacypolicy: resolve(__dirname, "privacypolicy.html"),
         blog: resolve(__dirname, "blogs.html"),
         accountDeletion: resolve(__dirname, "accountDeletion.html"),
+        careers: resolve(__dirname, "careers.html"),
+        sustainability: resolve(__dirname, "sustainability.html"),
       },
     },
     assetsInclude: [

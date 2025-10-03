@@ -289,7 +289,7 @@ flavorItems.forEach((item) => {
   ScrollTrigger.create({
     trigger: ".home-spotlight",
     start: "top top",
-    end: `+=${window.innerHeight * 7}px`,
+    end: `+=${window.innerHeight * 1.5}px`,
     pin: true,
     pinSpacing: true,
     scrub: 1,
@@ -385,7 +385,7 @@ flavorItems.forEach((item) => {
   ScrollTrigger.create({
     trigger: ".outro",
     start: "top top",
-    end: `+=${window.innerHeight * 3}px`,
+    end: `+=${window.innerHeight * 0.5}px`,
     pin: true,
     pinSpacing: true,
     scrub: 1,

@@ -431,7 +431,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ScrollTrigger.create({
     trigger: ".outro",
     start: "top top",
-    end: `+=${window.innerHeight * 3}px`,
+    end: `+=${window.innerHeight * 1}px`,
     pin: true,
     pinSpacing: true,
     scrub: 1,

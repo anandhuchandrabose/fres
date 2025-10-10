@@ -15,6 +15,7 @@ export default defineConfig({
         accountDeletion: resolve(__dirname, "accountDeletion.html"),
         careers: resolve(__dirname, "careers.html"),
         sustainability: resolve(__dirname, "sustainability.html"),
+        deliveryPartner: resolve(__dirname, "delivery-partner.html"),
       },
     },
     assetsInclude: [

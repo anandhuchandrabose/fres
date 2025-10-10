@@ -4,6 +4,7 @@
   height: 100svh;
   overflow: hidden;
   background-color: #040404;
+  z-index: 3;
 }
 
 .hero .hero-bg {
@@ -359,8 +360,9 @@
   height: 100svh;
   display: flex;
   justify-content: center;
-  z-index: -1;
-  background-color: var(--base-100);
+  z-index: 2;
+  background-color: transparent;
+  pointer-events: auto;
 }
 
 .home-services .cards-container {

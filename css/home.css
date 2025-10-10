@@ -1015,7 +1015,8 @@
 
 @media (max-width: 500px) {
   .hero .hero-content .hero-header h1 {
-    font-size: 30vw;
+    font-size: 15vw;
+    padding-top: 25svh;
   }
 
   .hero .hero-cards {

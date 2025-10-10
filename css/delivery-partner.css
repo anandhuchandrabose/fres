@@ -1,0 +1,398 @@
+.delivery-hero {
+  position: relative;
+  padding: 7rem 0 5rem;
+  background: linear-gradient(135deg, rgba(255, 48, 8, 0.12), rgba(10, 10, 10, 0.02));
+  overflow: hidden;
+}
+
+.delivery-hero .container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: clamp(2rem, 4vw, 4rem);
+}
+
+.delivery-hero-copy h1 {
+  font-size: clamp(2.8rem, 6vw, 4.6rem);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+}
+
+.delivery-hero-copy .md {
+  max-width: 36rem;
+  margin-top: 1.5rem;
+}
+
+.delivery-hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin: 2rem 0 1.5rem;
+}
+
+.delivery-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2.5rem;
+  border-radius: 999px;
+  background: #ff3008;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.delivery-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(255, 48, 8, 0.25);
+}
+
+.delivery-link {
+  align-self: center;
+  font-weight: 600;
+  color: var(--base-300);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  position: relative;
+}
+
+.delivery-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.35rem;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.35;
+}
+
+.delivery-perks {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  font-family: "DM Mono";
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.delivery-perks li::before {
+  content: "•";
+  margin-right: 0.5rem;
+  color: #ff3008;
+}
+
+.delivery-hero-visual {
+  position: relative;
+  max-width: 28rem;
+  justify-self: end;
+}
+
+.delivery-hero-visual::after {
+  content: "";
+  position: absolute;
+  inset: -10% 5% 5% -5%;
+  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.6), transparent 60%);
+  z-index: -1;
+}
+
+.delivery-hero-visual lottie-player {
+  width: 100%;
+  height: auto;
+}
+
+.section-header {
+  max-width: 48rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  line-height: 0.95;
+}
+
+.delivery-why,
+.delivery-how,
+.delivery-earnings,
+.delivery-requirements,
+.delivery-faq {
+  padding: 5.5rem 0;
+}
+
+.delivery-why {
+  background: rgba(239, 236, 229, 0.7);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.benefit-card {
+  background: #fffdf9;
+  border: 1px solid rgba(255, 48, 8, 0.1);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: 0 20px 45px rgba(10, 10, 10, 0.06);
+}
+
+.benefit-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.benefit-card h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  letter-spacing: -0.02em;
+}
+
+.benefit-card .md {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.delivery-how {
+  background: linear-gradient(120deg, rgba(255, 48, 8, 0.1), rgba(241, 209, 170, 0.05));
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.75rem;
+}
+
+.step-card {
+  background: rgba(253, 246, 236, 0.95);
+  padding: 2.75rem 2.25rem;
+  border-radius: 24px;
+  border: 1px solid rgba(10, 10, 10, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: relative;
+}
+
+.step-marker {
+  font-family: "DM Mono";
+  font-size: 0.8rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: #ff3008;
+}
+
+.step-card h3 {
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  letter-spacing: -0.02em;
+}
+
+.delivery-earnings {
+  background: #fff;
+}
+
+.earnings-header {
+  max-width: 48rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 3rem;
+}
+
+.earnings-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.75rem;
+}
+
+.earnings-card {
+  padding: 2.5rem 2.25rem;
+  border-radius: 24px;
+  border: 1px solid rgba(10, 10, 10, 0.05);
+  background: #fff9f6;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 14px 30px rgba(10, 10, 10, 0.07);
+}
+
+.earnings-card h3 {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  letter-spacing: -0.02em;
+}
+
+.earnings-card p {
+  line-height: 1.6;
+}
+
+.earnings-cta {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.earnings-cta .md a {
+  color: inherit;
+  font-weight: 600;
+}
+
+.delivery-requirements {
+  background: rgba(239, 236, 229, 0.6);
+}
+
+.requirements-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.75rem;
+}
+
+.requirement-card {
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  background: #fffdf9;
+  border: 1px solid rgba(255, 48, 8, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 18px 36px rgba(10, 10, 10, 0.05);
+}
+
+.requirement-card h3 {
+  font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+  letter-spacing: -0.02em;
+}
+
+.delivery-faq {
+  background: #fff;
+}
+
+.faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-accordion details {
+  background: rgba(253, 246, 236, 0.7);
+  border-radius: 18px;
+  padding: 1.5rem;
+  border: 1px solid rgba(10, 10, 10, 0.05);
+  transition: background 0.2s ease;
+}
+
+.faq-accordion summary {
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-accordion summary::marker {
+  display: none;
+}
+
+.faq-accordion details[open] {
+  background: rgba(255, 48, 8, 0.08);
+}
+
+.faq-accordion p {
+  margin-top: 1rem;
+  line-height: 1.6;
+}
+
+.delivery-cta {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, rgba(255, 48, 8, 0.15), rgba(255, 221, 148, 0.15));
+}
+
+.delivery-cta .container {
+  max-width: 700px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.delivery-cta h2 {
+  font-size: clamp(2.4rem, 5vw, 3.2rem);
+  line-height: 1;
+}
+
+.delivery-cta .delivery-btn {
+  align-self: center;
+}
+
+@media (max-width: 960px) {
+  .delivery-hero {
+    padding-top: 6rem;
+  }
+
+  .delivery-hero .container,
+  .benefits-grid,
+  .steps-grid,
+  .earnings-grid,
+  .requirements-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .delivery-hero .container {
+    text-align: center;
+  }
+
+  .delivery-hero-cta {
+    justify-content: center;
+  }
+
+  .delivery-hero-visual {
+    justify-self: center;
+  }
+
+  .benefit-card,
+  .step-card,
+  .earnings-card,
+  .requirement-card {
+    padding: 2.25rem 2rem;
+  }
+
+  .earnings-cta {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .delivery-hero {
+    padding: 5rem 0 3.5rem;
+  }
+
+  .delivery-hero-copy .md {
+    margin-top: 1rem;
+  }
+
+  .delivery-hero-cta {
+    gap: 0.75rem;
+  }
+
+  .delivery-perks {
+    justify-content: center;
+    font-size: 0.75rem;
+  }
+
+  .benefit-card,
+  .step-card,
+  .earnings-card,
+  .requirement-card {
+    border-radius: 16px;
+  }
+}

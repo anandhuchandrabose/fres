@@ -16,6 +16,7 @@ export default defineConfig({
         careers: resolve(__dirname, "careers.html"),
         sustainability: resolve(__dirname, "sustainability.html"),
         deliveryPartner: resolve(__dirname, "delivery-partner.html"),
+        vendorOnboarding: resolve(__dirname, "vendor-onboarding.html"),
       },
     },
     assetsInclude: [

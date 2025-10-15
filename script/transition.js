@@ -152,13 +152,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function closeMenuIfOpen() {
-    const menuToggleBtn = document.querySelector(".menu-toggle-btn");
-    if (menuToggleBtn && menuToggleBtn.classList.contains("menu-open")) {
-      menuToggleBtn.click();
-    }
-  }
-
   function isSamePage(href) {
     if (!href || href === "#" || href === "") return true;
 
@@ -202,7 +195,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (isSamePage(href)) {
       event.preventDefault();
-      closeMenuIfOpen();
       return;
     }
 

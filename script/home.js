@@ -8,93 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   gsap.registerPlugin(ScrollTrigger, SplitText);
 
-  gsap.set(".hero .hero-cards .card", { transformOrigin: "center center" });
-
-  gsap.to(".hero .hero-cards .card", {
-    scale: 1,
-    duration: 0.75,
-    delay: 0.25,
-    stagger: 0.1,
-    ease: "power4.out",
-    onComplete: () => {
-      gsap.set("#hero-card-1", { transformOrigin: "top right" });
-      gsap.set("#hero-card-3", { transformOrigin: "top left" });
-    },
-  });
-
   const smoothStep = (p) => p * p * (3 - 2 * p);
 
   if (window.innerWidth > 1000) {
-    ScrollTrigger.create({
-      trigger: ".hero",
-      start: "top top",
-      end: "75% top",
-      scrub: 1,
-      onUpdate: (self) => {
-        const progress = self.progress;
-
-        const heroCardsContainerOpacity = gsap.utils.interpolate(
-          1,
-          0.5,
-          smoothStep(progress)
-        );
-        gsap.set(".hero-cards", {
-          opacity: heroCardsContainerOpacity,
-        });
-
-        ["#hero-card-1", "#hero-card-2", "#hero-card-3"].forEach(
-          (cardId, index) => {
-            const delay = index * 0.9;
-            const cardProgress = gsap.utils.clamp(
-              0,
-              1,
-              (progress - delay * 0.1) / (1 - delay * 0.1)
-            );
-
-            const y = gsap.utils.interpolate(
-              "0%",
-              "400%",
-              smoothStep(cardProgress)
-            );
-            const scale = gsap.utils.interpolate(
-              1,
-              0.75,
-              smoothStep(cardProgress)
-            );
-
-            let x = "0%";
-            let rotation = 0;
-            if (index === 0) {
-              x = gsap.utils.interpolate("0%", "90%", smoothStep(cardProgress));
-              rotation = gsap.utils.interpolate(
-                0,
-                -15,
-                smoothStep(cardProgress)
-              );
-            } else if (index === 2) {
-              x = gsap.utils.interpolate(
-                "0%",
-                "-90%",
-                smoothStep(cardProgress)
-              );
-              rotation = gsap.utils.interpolate(
-                0,
-                15,
-                smoothStep(cardProgress)
-              );
-            }
-
-            gsap.set(cardId, {
-              y: y,
-              x: x,
-              rotation: rotation,
-              scale: scale,
-            });
-          }
-        );
-      },
-    });
-
     ScrollTrigger.create({
       trigger: ".home-services",
       start: "top top",

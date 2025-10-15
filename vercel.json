@@ -7,18 +7,6 @@
       "destination": "/about.html"
     },
     {
-      "source": "/work",
-      "destination": "/work.html"
-    },
-    {
-      "source": "/project",
-      "destination": "/project.html"
-    },
-    {
-      "source": "/contact",
-      "destination": "/contact.html"
-    },
-    {
       "source": "/privacypolicy",
       "destination": "/privacypolicy.html"
     },

@@ -29,6 +29,14 @@
     {
       "source": "/sustainability",
       "destination": "/sustainability.html"
+    },
+    {
+      "source": "/vendor-onboarding",
+      "destination": "/vendor-onboarding.html"
+    },
+    {
+      "source": "/delivery-partner",
+      "destination": "/delivery-partner.html"
     }
   ]
 }

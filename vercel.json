@@ -23,6 +23,10 @@
       "destination": "/careers.html"
     },
     {
+      "source": "/support",
+      "destination": "/support.html"
+    },
+    {
       "source": "/accountDeletion",
       "destination": "/accountDeletion.html"
     },
